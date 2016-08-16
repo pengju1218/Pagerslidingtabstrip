@@ -218,6 +218,29 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 		notifyDataSetChanged();
 	}
 
+	/**
+	 * 设置当前选中的
+	 * @param currentPosition
+     */
+	public void setCurrentPosition(int currentPosition){
+		int tmep=selectedPosition;
+		selectedPosition = currentPosition;
+		lastposition = selectedPosition;
+		choose(tmep, selectedPosition);
+
+		if(selectListener!=null){
+			selectListener.select(currentPosition);
+		}
+			/*scrollToChild(currentPosition, 0);
+
+		//this.currentPosition=currentPosition;
+		selectedPosition = currentPosition;
+		updateTabStyles();
+		if (delegatePageListener != null) {
+			delegatePageListener.onPageSelected(currentPosition);
+		}*/
+	}
+
 	String[] title;
 
 	public void setTitles(String[] title) {

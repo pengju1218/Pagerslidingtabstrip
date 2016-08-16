@@ -69,6 +69,7 @@ public class GetRecordActivity extends FragmentActivity {
             }
         });
 
+
         initView();
     }
 
@@ -99,6 +100,7 @@ public class GetRecordActivity extends FragmentActivity {
 			}
 		});
         setTabsValue();
+        get_record_tab.setCurrentPosition(2);
     }
 
     /**
